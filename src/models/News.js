@@ -1,5 +1,5 @@
 const NewsAPI = require("newsapi");
-const newsApi = new NewsAPI("56ebe961104d4ef4a60e4586250e11b7");
+const newsApi = new NewsAPI("4a8fe73adfdf42b08c42464a591a7f9b");
 
 class News {
   getNews(queries) {
