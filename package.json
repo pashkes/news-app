@@ -1,0 +1,27 @@
+{
+  "name": "news-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon ./app.js",
+    "start": "node ./index.js"
+  },
+  "keywords": [],
+  "author": "Pavel Tarasenko",
+  "license": "MIT",
+  "dependencies": {
+    "newsapi": "^2.4.1",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "husky": "4.3.8",
+    "prettier": "2.2.1",
+    "pretty-quick": "3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
