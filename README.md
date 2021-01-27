@@ -5,6 +5,7 @@ The app has been developed using follow version Node.js: 14.15.4 LTS
 `npm start` or `npm run dev` (for Dev mode)
 ## Api documentation 📜
 Root URL: `http://localhost:8000`
+or remote server, for example https://pavel-news-app.herokuapp.com/search?query=test
 
 ### Routes:
 `/search`
