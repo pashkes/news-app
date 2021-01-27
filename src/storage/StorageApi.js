@@ -19,7 +19,11 @@ class StorageApi {
           timestamp: new Date().toISOString(),
         });
 
-        await fs.promises.writeFile(pathToFile, fileData);
+        try {
+          await fs.promises.writeFile(pathToFile, fileData);
+        } catch (err) {
+          console.error(err);
+        }
       }
     }
 
@@ -36,9 +40,13 @@ class StorageApi {
 
     for await (let fileName of targetFiles) {
       const pathToFile = `${__dirname}/../../data/${fileName}.json`;
-      const bufferData = await fs.promises.readFile(pathToFile);
 
-      dataNews.push(JSON.parse(bufferData.toString()));
+      try {
+        const bufferData = await fs.promises.readFile(pathToFile);
+        dataNews.push(JSON.parse(bufferData.toString()));
+      } catch (err) {
+        console.error(err);
+      }
     }
 
     if (fromDate) {

@@ -27,7 +27,7 @@ const ensureDirectoryExistence = (filePath) => {
   }
 
   ensureDirectoryExistence(dirname);
-  return fs.mkdirSync(dirname);
+  return fs.promises.mkdir(dirname).catch((err) => console.error(err));
 };
 
 module.exports = { getUrlParams, ensureDirectoryExistence, handleError };

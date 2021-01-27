@@ -1,9 +1,10 @@
 const http = require("http");
 const port = process.env.PORT || "8000";
-const news = require("./src/routes/news");
+
+const newsRoute = require("./src/routes/news");
 
 const server = http.createServer((req, res) => {
-  news.getNews(req, res);
+  newsRoute.getNews(req, res);
 });
 
 server.listen(port, () => {

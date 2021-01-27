@@ -27,6 +27,7 @@ const GetNewsController = async function (req, res) {
     res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify(news));
   } catch (err) {
+    console.error(err);
     handleError(res, 500, ErrorMessage.SERVER);
   }
 };
